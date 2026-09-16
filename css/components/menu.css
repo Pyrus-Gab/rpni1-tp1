@@ -1,10 +1,16 @@
 /* MENU RÉACTIF ACCESSIBLE - BEM et ARIA */
 
+@layer variables {
+  .nav-menu {
+    font-family: 'Barlow', sans-serif;
+  }
+}
+
 @layer components {
   /* 1. ARCHITECTURE DESKTOP */
   .nav-menu {
-    --nav-bg: #ffffff;
-    --nav-text: #020263;
+    --nav-bg: black;
+    --nav-text: white;
     --nav-accent: #0066cc;
     --nav-focus-ring: #ffbf00;
 
@@ -21,6 +27,7 @@
       list-style: none;
       margin: 0;
       padding: 0;
+      text-transform: uppercase;
     }
 
     .nav-menu__link {

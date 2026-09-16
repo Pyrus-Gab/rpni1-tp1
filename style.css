@@ -12,7 +12,7 @@
 
 /* Dossier : css/base/ */
 @import url("css/base/normalize.css") layer(base);
-/* @import url("css/base/typography.css") layer(base); */
+@import url("css/base/typography.css") layer(base);
 
 /* Dossier : css/layout/ */
 /* @import url("css/layout/grid.css") layer(layout); */
@@ -22,7 +22,3 @@
 /* @import url("css/components/accordeon.css") layer(components); */
 /* @import url("css/components/modale.css") layer(components); */
 
-/* Temporaire - Pour tester une variable définie dans les settings */
-h1 {
-  color: var(--couleur-principale);
-}
