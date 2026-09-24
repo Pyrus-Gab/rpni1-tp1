@@ -1,0 +1,71 @@
+@layer component {
+    body {
+        background-color: #F5F5F5;
+    }
+
+    .chaussures {
+        list-style: none;
+    }
+
+    .bloc-chaussure {
+        margin-top: 20px;
+    }
+
+    .nouveau {
+        background-color: black;
+        color: white;
+        width: 5rem;
+        text-align: center;
+        padding: 5px;
+        font-family: 'Barlow', sans-serif;
+        text-transform: uppercase;
+        position: relative;
+        bottom: -60px;
+        left: 1rem;
+        font-size: small;
+    }
+
+    .background {
+        width: fit-content;
+        background-color: white;
+    }
+
+    .sexe {
+        color: #0793D1;
+    }
+
+    .couleur {
+        color: #717171;
+    }
+
+    .nom {
+        letter-spacing: -1px;
+    }
+
+    .sexe, .couleur, .nom, .prix {
+        margin-left: 1rem;
+    }
+
+    .sexe, .couleur, .nom, .prix, .ajout-panier {
+        font-family: 'Barlow', sans-serif;
+        font-weight: bold;
+    }
+
+    .sexe, .nom, .prix, .ajout-panier {
+        text-transform: uppercase;
+    }
+
+    .ajout-panier {
+        background-color: white;
+        color: #717171;
+        border:#EDEEF0 2px solid;
+        width: 100%;
+        height: 60px;
+    }
+
+    .ajout-panier:hover {
+        background-color: black;
+        color: white;
+    }
+
+}

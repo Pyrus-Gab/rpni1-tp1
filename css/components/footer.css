@@ -1,0 +1,47 @@
+@layer component {
+    footer {
+        background-color: #2A2A2A;
+        color: white;
+    }
+
+    .footer__titre, .footer__copyright, .footer__nav, .footer__texte {
+        margin-left: 2rem;
+        font-family: 'Barlow', sans-serif;
+    }
+
+    .footer__titre, .footer__copyright, .footer__nav {
+        text-transform: uppercase;
+    }
+
+    .footer__titre, .footer__nav {
+        font-weight: bold;
+    }
+
+    .footer__titre {
+        padding-top: 1rem;
+    }
+
+    .footer__nav-item {
+        list-style: none;
+    }
+
+    .footer__nav-lien {
+        color: white;
+        text-decoration: none;
+    }
+
+    .footer__nav-lien:hover {
+        color: #0066cc;
+    }
+
+    .footer__copyright, .footer__texte {
+        color: #848B95;
+    }
+
+    .footer__texte {
+        margin-bottom: 0;
+        padding-bottom: 1rem;
+    }
+
+
+}

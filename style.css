@@ -22,3 +22,9 @@
 /* @import url("css/components/accordeon.css") layer(components); */
 /* @import url("css/components/modale.css") layer(components); */
 
+@import url("css/components/grille.css") layer(components);
+
+@import url("css/components/footer.css") layer(components);
+
+@import url("css/components/titre-page-et-filtres.css") layer(components);
+

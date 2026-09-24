@@ -18,11 +18,17 @@
     </head>
     <body>
         <header>
-            <p class="titre-header">Foulée</p>
             <nav
                 class="nav-menu"
                 aria-label="Navigation principale"
             >
+                <p class="titre-header">
+                    <a
+                        href="#accueil"
+                        class="titre-header__link"
+                        >Foulée</a
+                    >
+                </p>
                 <!-- Bouton Menu / Fermer -->
                 <button
                     class="nav-menu__toggle"
@@ -87,8 +93,13 @@
                     </li>
                 </ul>
                 <form>
-                    <label for="recherche">Rechercher</label>
+                    <label
+                        class="recherche"
+                        for="recherche"
+                        >Rechercher</label
+                    >
                     <input
+                        class="recherche-boite"
                         type="search"
                         id="recherche"
                     />
@@ -118,6 +129,7 @@
                 /* Pour le fil d'ariane */
                 /* Conteneur principal */
                 .fil {
+                    display: flex;
                     padding: 10px 0;
                     font-family:
                         system-ui,
@@ -143,10 +155,10 @@
 
                 /* Séparateur visuel (ignoré par les lecteurs d'écran) */
                 .fil li:not(:last-child)::after {
-                    content: "/";
+                    content: ">";
                     margin: 0 12px;
                     color: #a0aec0; /* Gris clair */
-                    font-weight: 300;
+                    font-weight: 600;
                 }
 
                 /* Style des liens cliquables */
@@ -173,10 +185,12 @@
             <h1 class="titre-page">Chaussures</h1>
             <p class="nombre-produit">12 produits</p>
             <form>
-                <button class="bouton-tous">Tous</button>
-                <button class="bouton-hommes">Hommes</button>
-                <button class="bouton-femmes">Femmes</button>
-                <button class="bouton-enfants">Enfants</button>
+                <div class="bouton_filtre">
+                    <button class="bouton-tous">Tous</button>
+                    <button class="bouton-hommes">Hommes</button>
+                    <button class="bouton-femmes">Femmes</button>
+                    <button class="bouton-enfants">Enfants</button>
+                </div>
             </form>
             <div class="catalogue">
                 <div class="catalogue__mask-filtres">
@@ -190,15 +204,17 @@
                         >
                             Masquer les filtres
                         </button>
-                        <label class="tier">Trier par</label>
-                        <select
-                            class="selecteur"
-                            name="tri"
-                        >
-                            <option value="nouveautés">Nouveautés</option>
-                            <option value="pop">Populaire</option>
-                            <option value="alphabet">Alphabétique</option>
-                        </select>
+                        <div class="trier">
+                            <label>Trier par</label>
+                            <select
+                                class="selecteur"
+                                name="tri"
+                            >
+                                <option value="nouveautés">Nouveautés</option>
+                                <option value="pop">Populaire</option>
+                                <option value="alphabet">Alphabétique</option>
+                            </select>
+                        </div>
                     </form>
                 </div>
                 <form id="filtres">
@@ -452,7 +468,7 @@
                         padding-left: 15px;
                     }
 
-                    button {
+                    .mask-filtres {
                         padding: 6px 12px;
                         cursor: pointer;
                         margin-bottom: 12px;
@@ -460,292 +476,319 @@
                 </style>
                 <div class="grille-articles">
                     <ul>
-                        <li class="chaussures">
+                        <li class="chaussures 1">
                             <div class="bloc-chaussure">
                                 <div class="nouveau">Nouveau</div>
-                                <picture class="photo-chaussure">
-                                    <source
-                                        media="(min-width: 204px )"
-                                        srcset="Images/TP1-RWD/man_AirForceFlynit_01_w204.jpg"
-                                    />
-                                    <source
-                                        media="(min-width: 394px)"
-                                        srcset="Images/TP1-RWD/man_AirForceFlynit_01_w394.jpg"
-                                    />
-                                    <img
-                                        src="Images/TP1-RWD/man_AirForceFlynit_01_w204.jpg"
-                                        alt="Chaussures Air Force Flynit hommes"
-                                    />
-                                </picture>
-                                <p class="sexe">Hommes</p>
-                                <p class="nom">Air Force Flyknit</p>
-                                <p class="couleur">3 couleurs</p>
-                                <p class="prix">$129,99</p>
-                                <button class="ajout-panier">Ajouter au panier</button>
+                                <div class="background">
+                                    <picture class="photo-chaussure">
+                                        <source
+                                            media="(min-width: 264px )"
+                                            srcset="Images/TP1-RWD/man_AirForceFlynit_01_w264.jpg"
+                                        />
+                                        <source
+                                            media="(min-width: 394px)"
+                                            srcset="Images/TP1-RWD/man_AirForceFlynit_01_w394.jpg"
+                                        />
+                                        <img
+                                            src="Images/TP1-RWD/man_AirForceFlynit_01_w264.jpg"
+                                            alt="Chaussures Air Force Flynit hommes"
+                                        />
+                                    </picture>
+                                    <p class="sexe">Hommes</p>
+                                    <p class="nom">Air Force Flyknit</p>
+                                    <p class="couleur">3 couleurs</p>
+                                    <p class="prix">$129,99</p>
+                                    <button class="ajout-panier">Ajouter au panier</button>
+                                </div>
                             </div>
                         </li>
-                        <li class="chaussures">
+                        <li class="chaussures 2">
                             <div class="bloc-chaussure">
                                 <div class="nouveau is-hidden">Nouveau</div>
-                                <picture class="photo-chaussure">
-                                    <source
-                                        media="(min-width: 204px )"
-                                        srcset="Images/TP1-RWD/wom_AirForceMidLeather_01_w204.jpg"
-                                    />
-                                    <source
-                                        media="(min-width: 394px)"
-                                        srcset="Images/TP1-RWD/wom_AirForceMidLeather_01_w394.jpg"
-                                    />
-                                    <img
-                                        src="Images/TP1-RWD/wom_AirForceMidLeather_01_w204.jpg"
-                                        alt="Chaussures Air Force Mid Leather femmes"
-                                    />
-                                </picture>
-                                <p class="sexe">Femmes</p>
-                                <p class="nom">Air Force Mid Leather</p>
-                                <p class="couleur">4 couleurs</p>
-                                <p class="prix">$109,99</p>
-                                <button class="ajout-panier">Ajouter au panier</button>
+                                <div class="background">
+                                    <picture class="photo-chaussure">
+                                        <source
+                                            media="(min-width: 204px )"
+                                            srcset="Images/TP1-RWD/wom_AirForceMidLeather_01_w264.jpg"
+                                        />
+                                        <source
+                                            media="(min-width: 394px)"
+                                            srcset="Images/TP1-RWD/wom_AirForceMidLeather_01_w394.jpg"
+                                        />
+                                        <img
+                                            src="Images/TP1-RWD/wom_AirForceMidLeather_01_w264.jpg"
+                                            alt="Chaussures Air Force Mid Leather femmes"
+                                        />
+                                    </picture>
+                                    <p class="sexe">Femmes</p>
+                                    <p class="nom">Air Force Mid Leather</p>
+                                    <p class="couleur">4 couleurs</p>
+                                    <p class="prix">$109,99</p>
+                                    <button class="ajout-panier">Ajouter au panier</button>
+                                </div>
                             </div>
                         </li>
-                        <li class="chaussures">
+                        <li class="chaussures 3">
                             <div class="bloc-chaussure">
                                 <div class="nouveau is-hidden">Nouveau</div>
-                                <picture class="photo-chaussure">
-                                    <source
-                                        media="(min-width: 204px )"
-                                        srcset="Images/TP1-RWD/man_AirJordanRetroDecon_01_w204.jpg"
-                                    />
-                                    <source
-                                        media="(min-width: 394px)"
-                                        srcset="Images/TP1-RWD/man_AirJordanRetroDecon_01_w394.jpg"
-                                    />
-                                    <img
-                                        src="Images/TP1-RWD/man_AirJordanRetroDecon_01_w204.jpg"
-                                        alt="Chaussures Air Jordan Retro Decon hommes"
-                                    />
-                                </picture>
-                                <p class="sexe">Hommes</p>
-                                <p class="nom">Air Jordan Retro Decon</p>
-                                <p class="couleur">5 couleurs</p>
-                                <p class="prix">$189,99</p>
-                                <button class="ajout-panier">Ajouter au panier</button>
+                                <div class="background">
+                                    <picture class="photo-chaussure">
+                                        <source
+                                            media="(min-width: 204px )"
+                                            srcset="Images/TP1-RWD/man_AirJordanRetroDecon_01_w264.jpg"
+                                        />
+                                        <source
+                                            media="(min-width: 394px)"
+                                            srcset="Images/TP1-RWD/man_AirJordanRetroDecon_01_w394.jpg"
+                                        />
+                                        <img
+                                            src="Images/TP1-RWD/man_AirJordanRetroDecon_01_w264.jpg"
+                                            alt="Chaussures Air Jordan Retro Decon hommes"
+                                        />
+                                    </picture>
+                                    <p class="sexe">Hommes</p>
+                                    <p class="nom">Air Jordan Retro Decon</p>
+                                    <p class="couleur">5 couleurs</p>
+                                    <p class="prix">$189,99</p>
+                                    <button class="ajout-panier">Ajouter au panier</button>
+                                </div>
                             </div>
                         </li>
-                        <li class="chaussures">
+                        <li class="chaussures 4">
                             <div class="bloc-chaussure">
                                 <div class="nouveau is-hidden">Nouveau</div>
-                                <picture class="photo-chaussure">
-                                    <source
-                                        media="(min-width: 204px )"
-                                        srcset="Images/TP1-RWD/man_AirVortex01_w204.jpg"
-                                    />
-                                    <source
-                                        media="(min-width: 394px)"
-                                        srcset="Images/TP1-RWD/man_AirVortex01_w394.jpg"
-                                    />
-                                    <img
-                                        src="Images/TP1-RWD/man_AirVortex01_w204.jpg"
-                                        alt="Chaussures Air Vortex hommes"
-                                    />
-                                </picture>
-                                <p class="sexe">Hommes</p>
-                                <p class="nom">Air Vortex</p>
-                                <p class="couleur">3 couleurs</p>
-                                <p class="prix">$99,99</p>
-                                <button class="ajout-panier">Ajouter au panier</button>
+                                <div class="background">
+                                    <picture class="photo-chaussure">
+                                        <source
+                                            media="(min-width: 204px )"
+                                            srcset="Images/TP1-RWD/man_AirVortex01_w264.jpg"
+                                        />
+                                        <source
+                                            media="(min-width: 394px)"
+                                            srcset="Images/TP1-RWD/man_AirVortex01_w394.jpg"
+                                        />
+                                        <img
+                                            src="Images/TP1-RWD/man_AirVortex01_w264.jpg"
+                                            alt="Chaussures Air Vortex hommes"
+                                        />
+                                    </picture>
+                                    <p class="sexe">Hommes</p>
+                                    <p class="nom">Air Vortex</p>
+                                    <p class="couleur">3 couleurs</p>
+                                    <p class="prix">$99,99</p>
+                                    <button class="ajout-panier">Ajouter au panier</button>
+                                </div>
                             </div>
                         </li>
-                        <li class="chaussures">
+                        <li class="chaussures 5">
                             <div class="bloc-chaussure">
                                 <div class="nouveau is-hidden">Nouveau</div>
-                                <picture class="photo-chaussure">
-                                    <source
-                                        media="(min-width: 204px )"
-                                        srcset="Images/TP1-RWD/man_CourtBoroughMid_01_w204.jpg"
-                                    />
-                                    <source
-                                        media="(min-width: 394px)"
-                                        srcset="Images/TP1-RWD/man_CourtBoroughMid_01_w394.jpg"
-                                    />
-                                    <img
-                                        src="Images/TP1-RWD/man_CourtBoroughMid_01_w204.jpg"
-                                        alt="Chaussures Court Borough Mid hommes"
-                                    />
-                                </picture>
-                                <p class="sexe">Hommes</p>
-                                <p class="nom">Court Borough Mid</p>
-                                <p class="couleur">4 couleurs</p>
-                                <p class="prix">$79,99</p>
-                                <button class="ajout-panier">Ajouter au panier</button>
+                                <div class="background">
+                                    <picture class="photo-chaussure">
+                                        <source
+                                            media="(min-width: 204px )"
+                                            srcset="Images/TP1-RWD/man_CourtBoroughMid_01_w264.jpg"
+                                        />
+                                        <source
+                                            media="(min-width: 394px)"
+                                            srcset="Images/TP1-RWD/man_CourtBoroughMid_01_w394.jpg"
+                                        />
+                                        <img
+                                            src="Images/TP1-RWD/man_CourtBoroughMid_01_w264.jpg"
+                                            alt="Chaussures Court Borough Mid hommes"
+                                        />
+                                    </picture>
+                                    <p class="sexe">Hommes</p>
+                                    <p class="nom">Court Borough Mid</p>
+                                    <p class="couleur">4 couleurs</p>
+                                    <p class="prix">$79,99</p>
+                                    <button class="ajout-panier">Ajouter au panier</button>
+                                </div>
                             </div>
                         </li>
-                        <li class="chaussures">
+                        <li class="chaussures 6">
                             <div class="bloc-chaussure">
                                 <div class="nouveau">Nouveau</div>
-                                <picture class="photo-chaussure">
-                                    <source
-                                        media="(min-width: 204px )"
-                                        srcset="Images/TP1-RWD/wom_ClassicCortezNylonB_01_w204.jpg"
-                                    />
-                                    <source
-                                        media="(min-width: 394px)"
-                                        srcset="Images/TP1-RWD/wom_ClassicCortezNylonB_01_w394.jpg"
-                                    />
-                                    <img
-                                        src="Images/TP1-RWD/wom_ClassicCortezNylonB_01_w204.jpg"
-                                        alt="Chaussures Classic Cortez Nylon B femmes"
-                                    />
-                                </picture>
-                                <p class="sexe">Femmes</p>
-                                <p class="nom">Classic Cortez Nylon B</p>
-                                <p class="couleur">2 couleurs</p>
-                                <p class="prix">$89,99</p>
-                                <button class="ajout-panier">Ajouter au panier</button>
+                                <div class="background">
+                                    <picture class="photo-chaussure">
+                                        <source
+                                            media="(min-width: 204px )"
+                                            srcset="Images/TP1-RWD/wom_ClassicCortezNylonB_01_w264.jpg"
+                                        />
+                                        <source
+                                            media="(min-width: 394px)"
+                                            srcset="Images/TP1-RWD/wom_ClassicCortezNylonB_01_w394.jpg"
+                                        />
+                                        <img
+                                            src="Images/TP1-RWD/wom_ClassicCortezNylonB_01_w264.jpg"
+                                            alt="Chaussures Classic Cortez Nylon B femmes"
+                                        />
+                                    </picture>
+                                    <p class="sexe">Femmes</p>
+                                    <p class="nom">Classic Cortez Nylon B</p>
+                                    <p class="couleur">2 couleurs</p>
+                                    <p class="prix">$89,99</p>
+                                    <button class="ajout-panier">Ajouter au panier</button>
+                                </div>
                             </div>
                         </li>
-                        <li class="chaussures">
+                        <li class="chaussures 7">
                             <div class="bloc-chaussure">
                                 <div class="nouveau">Nouveau</div>
-                                <picture class="photo-chaussure">
-                                    <source
-                                        media="(min-width: 204px )"
-                                        srcset="Images/TP1-RWD/man_AirMaxUltraMoire_01_w204.jpg"
-                                    />
-                                    <source
-                                        media="(min-width: 394px)"
-                                        srcset="Images/TP1-RWD/man_AirMaxUltraMoire_01_w394.jpg"
-                                    />
-                                    <img
-                                        src="Images/TP1-RWD/man_AirMaxUltraMoire_01_w204.jpg"
-                                        alt="Chaussures Air Max Ultra Moire hommes"
-                                    />
-                                </picture>
-                                <p class="sexe">Hommes</p>
-                                <p class="nom">Air Max Ultra Moire</p>
-                                <p class="couleur">4 couleurs</p>
-                                <p class="prix">$149,99</p>
-                                <button class="ajout-panier">Ajouter au panier</button>
+                                <div class="background">
+                                    <picture class="photo-chaussure">
+                                        <source
+                                            media="(min-width: 204px )"
+                                            srcset="Images/TP1-RWD/man_AirMaxUltraMoire_01_w264.jpg"
+                                        />
+                                        <source
+                                            media="(min-width: 394px)"
+                                            srcset="Images/TP1-RWD/man_AirMaxUltraMoire_01_w394.jpg"
+                                        />
+                                        <img
+                                            src="Images/TP1-RWD/man_AirMaxUltraMoire_01_w264.jpg"
+                                            alt="Chaussures Air Max Ultra Moire hommes"
+                                        />
+                                    </picture>
+                                    <p class="sexe">Hommes</p>
+                                    <p class="nom">Air Max Ultra Moire</p>
+                                    <p class="couleur">4 couleurs</p>
+                                    <p class="prix">$149,99</p>
+                                    <button class="ajout-panier">Ajouter au panier</button>
+                                </div>
                             </div>
                         </li>
-                        <li class="chaussures">
+                        <li class="chaussures 8">
                             <div class="bloc-chaussure">
                                 <div class="nouveau is-hidden">Nouveau</div>
-                                <picture class="photo-chaussure">
-                                    <source
-                                        media="(min-width: 204px )"
-                                        srcset="Images/TP1-RWD/wom_AirMaxZero_01_w204.jpg"
-                                    />
-                                    <source
-                                        media="(min-width: 394px)"
-                                        srcset="Images/TP1-RWD/wom_AirMaxZero_01_w394.jpg"
-                                    />
-                                    <img
-                                        src="Images/TP1-RWD/wom_AirMaxZero_01_w204.jpg"
-                                        alt="Chaussures Air Max Zero femmes"
-                                    />
-                                </picture>
-                                <p class="sexe">femmes</p>
-                                <p class="nom">Air Max Zero</p>
-                                <p class="couleur">6 couleurs</p>
-                                <p class="prix">$119,99</p>
-                                <button class="ajout-panier">Ajouter au panier</button>
+                                <div class="background">
+                                    <picture class="photo-chaussure">
+                                        <source
+                                            media="(min-width: 204px )"
+                                            srcset="Images/TP1-RWD/wom_AirMaxZero_01_w264.jpg"
+                                        />
+                                        <source
+                                            media="(min-width: 394px)"
+                                            srcset="Images/TP1-RWD/wom_AirMaxZero_01_w394.jpg"
+                                        />
+                                        <img
+                                            src="Images/TP1-RWD/wom_AirMaxZero_01_w264.jpg"
+                                            alt="Chaussures Air Max Zero femmes"
+                                        />
+                                    </picture>
+                                    <p class="sexe">femmes</p>
+                                    <p class="nom">Air Max Zero</p>
+                                    <p class="couleur">6 couleurs</p>
+                                    <p class="prix">$119,99</p>
+                                    <button class="ajout-panier">Ajouter au panier</button>
+                                </div>
                             </div>
                         </li>
-                        <li class="chaussures">
+                        <li class="chaussures 9">
                             <div class="bloc-chaussure">
                                 <div class="nouveau">Nouveau</div>
-                                <picture class="photo-chaussure">
-                                    <source
-                                        media="(min-width: 204px )"
-                                        srcset="Images/TP1-RWD/wom_BlazerLowLX_01_w204.jpg"
-                                    />
-                                    <source
-                                        media="(min-width: 394px)"
-                                        srcset="Images/TP1-RWD/wom_BlazerLowLX_01_w394.jpg"
-                                    />
-                                    <img
-                                        src="Images/TP1-RWD/wom_BlazerLowLX_01_w204.jpg"
-                                        alt="Chaussures Blazer Low LX femmes"
-                                    />
-                                </picture>
-                                <p class="sexe">Femmes</p>
-                                <p class="nom">Blazer Low LX</p>
-                                <p class="couleur">3 couleurs</p>
-                                <p class="prix">$109,99</p>
-                                <button class="ajout-panier">Ajouter au panier</button>
+                                <div class="background">
+                                    <picture class="photo-chaussure">
+                                        <source
+                                            media="(min-width: 204px )"
+                                            srcset="Images/TP1-RWD/wom_BlazerLowLX_01_w264.jpg"
+                                        />
+                                        <source
+                                            media="(min-width: 394px)"
+                                            srcset="Images/TP1-RWD/wom_BlazerLowLX_01_w394.jpg"
+                                        />
+                                        <img
+                                            src="Images/TP1-RWD/wom_BlazerLowLX_01_w264.jpg"
+                                            alt="Chaussures Blazer Low LX femmes"
+                                        />
+                                    </picture>
+                                    <p class="sexe">Femmes</p>
+                                    <p class="nom">Blazer Low LX</p>
+                                    <p class="couleur">3 couleurs</p>
+                                    <p class="prix">$109,99</p>
+                                    <button class="ajout-panier">Ajouter au panier</button>
+                                </div>
                             </div>
                         </li>
-                        <li class="chaussures">
+                        <li class="chaussures 10">
                             <div class="bloc-chaussure">
                                 <div class="nouveau is-hidden">Nouveau</div>
-                                <picture class="photo-chaussure">
-                                    <source
-                                        media="(min-width: 204px )"
-                                        srcset="Images/TP1-RWD/man_CortezUltraMoire_01_w204.jpg"
-                                    />
-                                    <source
-                                        media="(min-width: 394px)"
-                                        srcset="Images/TP1-RWD/man_CortezUltraMoire_01_w394.jpg"
-                                    />
-                                    <img
-                                        src="Images/TP1-RWD/man_CortezUltraMoire_01_w204.jpg"
-                                        alt="Chaussures Cortez Ultra Moire hommes"
-                                    />
-                                </picture>
-                                <p class="sexe">Hommes</p>
-                                <p class="nom">Cortez Ultra Moire</p>
-                                <p class="couleur">5 couleurs</p>
-                                <p class="prix">$99,99</p>
-                                <button class="ajout-panier">Ajouter au panier</button>
+                                <div class="background">
+                                    <picture class="photo-chaussure">
+                                        <source
+                                            media="(min-width: 204px )"
+                                            srcset="Images/TP1-RWD/man_CortezUltraMoire_01_w264.jpg"
+                                        />
+                                        <source
+                                            media="(min-width: 394px)"
+                                            srcset="Images/TP1-RWD/man_CortezUltraMoire_01_w394.jpg"
+                                        />
+                                        <img
+                                            src="Images/TP1-RWD/man_CortezUltraMoire_01_w264.jpg"
+                                            alt="Chaussures Cortez Ultra Moire hommes"
+                                        />
+                                    </picture>
+                                    <p class="sexe">Hommes</p>
+                                    <p class="nom">Cortez Ultra Moire</p>
+                                    <p class="couleur">5 couleurs</p>
+                                    <p class="prix">$99,99</p>
+                                    <button class="ajout-panier">Ajouter au panier</button>
+                                </div>
                             </div>
                         </li>
-                        <li class="chaussures">
+                        <li class="chaussures 11">
                             <div class="bloc-chaussure">
                                 <div class="nouveau is-hidden">Nouveau</div>
-                                <picture class="photo-chaussure">
-                                    <source
-                                        media="(min-width: 204px )"
-                                        srcset="Images/TP1-RWD/wom_FlexSupremeTR5b_01_w204.jpg"
-                                    />
-                                    <source
-                                        media="(min-width: 394px)"
-                                        srcset="Images/TP1-RWD/wom_FlexSupremeTR5b_01_w394.jpg"
-                                    />
-                                    <img
-                                        src="Images/TP1-RWD/wom_FlexSupremeTR5b_01_w204.jpg"
-                                        alt="Chaussures Flex Supreme TR 5b femmes"
-                                    />
-                                </picture>
-                                <p class="sexe">Femmes</p>
-                                <p class="nom">Flex Supreme TR 5B</p>
-                                <p class="couleur">3 couleurs</p>
-                                <p class="prix">$89,99</p>
-                                <button class="ajout-panier">Ajouter au panier</button>
+                                <div class="background">
+                                    <picture class="photo-chaussure">
+                                        <source
+                                            media="(min-width: 204px )"
+                                            srcset="Images/TP1-RWD/wom_FlexSupremeTR5b_01_w264.jpg"
+                                        />
+                                        <source
+                                            media="(min-width: 394px)"
+                                            srcset="Images/TP1-RWD/wom_FlexSupremeTR5b_01_w394.jpg"
+                                        />
+                                        <img
+                                            src="Images/TP1-RWD/wom_FlexSupremeTR5b_01_w264.jpg"
+                                            alt="Chaussures Flex Supreme TR 5b femmes"
+                                        />
+                                    </picture>
+                                    <p class="sexe">Femmes</p>
+                                    <p class="nom">Flex Supreme TR 5B</p>
+                                    <p class="couleur">3 couleurs</p>
+                                    <p class="prix">$89,99</p>
+                                    <button class="ajout-panier">Ajouter au panier</button>
+                                </div>
                             </div>
                         </li>
-                        <li class="chaussures">
+                        <li
+                            class="chaussures"
+                            12
+                        >
                             <div class="bloc-chaussure">
                                 <div class="nouveau">Nouveau</div>
-                                <picture class="photo-chaussure">
-                                    <source
-                                        media="(min-width: 204px )"
-                                        srcset="Images/TP1-RWD/wom_LunarChargeEssential_01_w204.jpg"
-                                    />
-                                    <source
-                                        media="(min-width: 394px)"
-                                        srcset="Images/TP1-RWD/wom_LunarChargeEssential_01_w394.jpg"
-                                    />
-                                    <img
-                                        src="Images/TP1-RWD/wom_LunarChargeEssential_01_w204.jpg"
-                                        alt="Chaussures Lunar Charge Essential femmes"
-                                    />
-                                </picture>
-                                <p class="sexe">Femmes</p>
-                                <p class="nom">Lunar Charge Essential</p>
-                                <p class="couleur">4 couleurs</p>
-                                <p class="prix">$119,99</p>
-                                <button class="ajout-panier">Ajouter au panier</button>
+                                <div class="background">
+                                    <picture class="photo-chaussure">
+                                        <source
+                                            media="(min-width: 204px )"
+                                            srcset="Images/TP1-RWD/wom_LunarChargeEssential_01_w264.jpg"
+                                        />
+                                        <source
+                                            media="(min-width: 394px)"
+                                            srcset="Images/TP1-RWD/wom_LunarChargeEssential_01_w394.jpg"
+                                        />
+                                        <img
+                                            src="Images/TP1-RWD/wom_LunarChargeEssential_01_w264.jpg"
+                                            alt="Chaussures Lunar Charge Essential femmes"
+                                        />
+                                    </picture>
+                                    <p class="sexe">Femmes</p>
+                                    <p class="nom">Lunar Charge Essential</p>
+                                    <p class="couleur">4 couleurs</p>
+                                    <p class="prix">$119,99</p>
+                                    <button class="ajout-panier">Ajouter au panier</button>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -761,7 +804,10 @@
         </main>
         <footer>
             <h3 class="footer__titre">Foulée</h3>
-            <p class="footer__copyright">&copy2017 Foulée <br> Tous droits réservés 2017.</p>
+            <p class="footer__copyright">
+                &copy2017 Foulée <br />
+                Tous droits réservés 2017.
+            </p>
             <nav class="footer__nav">
                 <ul class="footer__nav-menu">
                     <li class="footer__nav-item">
@@ -794,8 +840,10 @@
                     </li>
                 </ul>
             </nav>
-            <p class="footer__texte">FOULÉE est une boutique spécialisée dans la vente de chaussures de sport et de lifestyle. Nous
-            offrons une sélection soigneusement choisie pour hommes, femmes et enfants.</p>
+            <p class="footer__texte">
+                FOULÉE est une boutique spécialisée dans la vente de chaussures de sport et de lifestyle. Nous offrons une sélection soigneusement
+                choisie pour hommes, femmes et enfants.
+            </p>
         </footer>
     </body>
 </html>

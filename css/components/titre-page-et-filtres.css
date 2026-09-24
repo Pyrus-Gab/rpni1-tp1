@@ -1,0 +1,77 @@
+@layer components {
+    .titre-page {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 1000;
+        font-size: 4rem;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: -.4rem;
+    }
+
+    .nombre-produit {
+        color: #a0aec0;
+    }
+
+    .titre-page, .nombre-produit, .fil {
+        margin-left: 2rem;
+    }
+
+    .bouton-tous, .bouton-hommes, .bouton-femmes, .bouton-enfants {
+        font-family: 'Barlow', sans-serif;
+        background-color: white;
+        border: #DDDDDD 2px solid;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        width: 7rem;
+        height: 50px;
+        font-size: 100%;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    @media (width <= 393px) {
+        .bouton-filtre{
+            grid-template-columns: repeat(2, 22%);
+            justify-content: space-between;
+        }
+    }
+
+    .bouton-tous {
+        margin-left: 2rem;
+        background-color: black;
+        color: white;
+    }
+
+    .catalogue__mask-filtres {
+        background-color: white;
+        border-top: #E6E7EB 2px solid;
+        padding: 1rem;
+    }
+
+    .trier {
+        color: #b3c3d8;
+        position: absolute;
+        top: 41%;
+        right: 0;
+    }
+
+    @media (width <= 393px) {
+        .trier {
+            position: absolute;
+            top: 52.5%;
+        }
+    }
+
+    .selecteur {
+        border: #a0aec0 1px solid;
+        padding-top: .3rem;
+        padding-bottom: .3rem;
+        padding-left: .6rem;
+        margin-right: 1rem;
+    }
+    
+    .mask-filtres {
+        border: none;
+        background-color: white;
+    }
+}
