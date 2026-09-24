@@ -74,4 +74,16 @@
         border: none;
         background-color: white;
     }
+
+    .filtres__item {
+        list-style: none;
+        text-transform: uppercase;
+        font-family: 'Barlow', sans-serif;
+        font-weight: bold;
+        padding-bottom: 2rem;
+    }
+
+    .filtres__sub-liste-item {
+        list-style: none;
+    }
 }

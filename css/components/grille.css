@@ -68,4 +68,78 @@
         color: white;
     }
 
+    .grille-articles {
+        display: grid;
+        grid-template-areas: ". chaussure1 chaussure2 chaussure3"
+                             ". chaussure4 chaussure5 chaussure6"
+                             ". chaussure7 chaussure8 chaussure9"
+                             ". chaussure10 chaussure11 chaussure12";
+    }
+
+    .chaussure1 {
+        grid-area: "chaussure1";
+    }
+
+    .chaussure2 {
+        grid-area: "chaussure2";
+    }
+
+    .chaussure3 {
+        grid-area: "chaussure3";
+    }
+
+    .chaussure4 {
+        grid-area: "chaussure4";
+    }
+
+    .chaussure5 {
+        grid-area: "chaussure5";
+    }
+
+    .chaussure6 {
+        grid-area: "chaussure6";
+    }
+
+    .chaussure7 {
+        grid-area: "chaussure7";
+    }
+
+    .chaussure8 {
+        grid-area: "chaussure8";
+    }
+
+    .chaussure9 {
+        grid-area: "chaussure9";
+    }
+
+    .chaussure10 {
+        grid-area: "chaussure10";
+    }
+
+    .chaussure11 {
+        grid-area: "chaussure11";
+    }
+
+    .chaussure12 {
+        grid-area: "chaussure12";
+    }
+
+    .selecteur-de-page {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-evenly;
+        font-family: 'Barlow', sans-serif;
+    }
+
+    .page {
+        width: 3rem;
+        height: 3rem;
+        justify-self: center;
+    }
+
+    .active {
+        background-color: black;
+        color: white;
+    }
+
 }
